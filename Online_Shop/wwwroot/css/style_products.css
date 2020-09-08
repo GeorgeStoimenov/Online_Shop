@@ -1,0 +1,128 @@
+ body{
+    background-image: url(/images/background.jpg);
+    background-size: 150%;
+    font-family:"PT Serif";
+ }
+ nav{
+    display: inline-flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: dimgray;
+    justify-content: space-between;
+    z-index: 99; 
+}
+
+nav h2{
+    padding-right: 10px;
+    color: white;
+}
+nav ul { 
+  display: inline-flex; 
+  padding-left: 0; 
+}
+
+nav li a{
+  color: white;
+  text-align: center;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #111;
+}
+
+.page-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
+img{
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   padding: 5px;
+   width: 150px;
+   height: 150px;
+   background-color: ivory;
+   }
+
+div {
+    margin-top: 60px;
+    display: flex;   
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding-left: 35px
+    }
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+div h2{
+    margin-right: 5px;
+}
+
+.container-snacks{
+    width: 600px;
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-beers{
+    width: 800px;
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name{
+    font: bold;
+    font-size: 20px;
+}
+.content img:hover {
+    opacity: 0.2;
+    cursor: pointer;  
+    backface-visibility: hidden;  
+  }
+
+  .content{
+    position: relative;
+  }
+ 
+.out-of-stock{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 0%;
+    left: 5%;   
+    text-align: center;
+  }
+  .content:hover .out-of-stock {
+    opacity: 1;
+  }
+  .text {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 16px 27px;
+  }
+
+footer{
+    background-color: dimgray;
+    width: 100%; 
+    height: 100px;   
+    margin-top: 50px;   
+    text-align: center;
+}
+

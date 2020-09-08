@@ -1,0 +1,89 @@
+﻿@model IProductRepository
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style_products.css" rel="stylesheet" type="text/css" />   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT Serif">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Store</title>
+</head>
+<body>   
+    <div class="page-wrapper">
+        <div class="allsnacks">
+            <h2>Snacks</h2>
+            <div class="container-snacks">
+                @foreach (var prod in Model.Products.Where(a => a.Category == "Snacks"))
+                {
+                    <div class="content">
+                        @if (prod.ProductName == "Chips")
+                        {
+                            <img src="images/chips.jfif">
+                        }
+                        else if (prod.ProductName == "Tortilla")
+                        {
+                            <img src="images/tortilla.jfif">
+                        }
+                        else
+                        {
+                            <img src="images/popcorn.jpg">
+                        }
+                        <p class="name">@prod.ProductName</p>
+                        <p class="price">Price: @prod.UnitPrice</p>
+                        <p class="stock">Units in Stock: @prod.UnitsInStock</p>
+                        @if (prod.UnitsInStock == 0)
+                        {
+                            <div class="out-of-stock">
+                                <p class="text">Out Of Stock</p>
+                            </div>
+                        }
+                    </div>
+                 }
+            </div>
+         </div>
+        <div class="allbeers">
+            <h2>Beers</h2>
+            <div class="container-beers">
+                @foreach (var prod in Model.Products.Where(a => a.Category == "Beers"))
+                {
+
+                    <div class="content">
+                        @if (prod.ProductName == "Budweiser")
+                        {
+                            <img src="images/budweiser.jpg" class="image">
+                        }
+                        else if (prod.ProductName == "Corona")
+                        {
+                            <img src="images/corona.jpg" class="image">
+                        }
+                        else if (prod.ProductName == "Heineken")
+                        {
+                            <img src="images/heineken.jpg" class="image">
+                        }
+                        else
+                        {
+                            <img src="images/grolsh.jfif" class="image">
+                        }
+
+                        <p class="name">@prod.ProductName</p>
+                        <p class="price">Price: @prod.UnitPrice</p>
+                        <p class="stock">Units in Stock: @prod.UnitsInStock</p>
+                        @if (prod.UnitsInStock == 0)
+                        {
+                            <div class="out-of-stock">
+                                <p class="text">Out Of Stock</p>
+                            </div>
+                        }
+                    </div>                  
+                }
+            </div>
+        </div>      
+    </div>
+</body>
+</html>
