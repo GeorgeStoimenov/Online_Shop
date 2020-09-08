@@ -1,0 +1,9 @@
+For completing the task I've choosen ASP.NET MVC pattern, HTML and CSS. 
+First I created the Product class, then an interface called "IProductRepository" and a class "ProductRepository" which implements the interface.
+The Product Controller's contructor requires an object that needs to impelemt the "IProductRepository" interface, using dependency injection, the service in StartUp class tells that "ProductRepository" instance should be created.
+I've created a database, which for the purpose of the task is created every time the application is started.
+The database is created and filled with data by the "SeedData" class. 
+The data is passed to the View method, I've created a view page called "index.cshtml" to display the data.
+The "_layout.cshtml" display the navigation bar, background picture and the footer.
+
+
